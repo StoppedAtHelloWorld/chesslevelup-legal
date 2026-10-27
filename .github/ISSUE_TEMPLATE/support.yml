@@ -1,0 +1,57 @@
+name: Demande d’assistance / Support request
+description: Signaler un problème dans l’application Learn Chess Openings.
+title: "[Support] "
+labels:
+  - support
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de ne joindre aucune donnée de paiement, aucun mot de passe ni information sensible.
+        Please do not include payment details, passwords or other sensitive information.
+  - type: dropdown
+    id: language
+    attributes:
+      label: Langue / Language
+      options:
+        - Français
+        - English
+        - Español
+        - Deutsch
+        - Italiano
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Appareil / Device
+      description: Modèle du téléphone et version Android ou iOS.
+      placeholder: Pixel 8, Android 16
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problème rencontré / Problem
+      description: Décris ce qui s’est passé et ce que tu attendais.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Étapes pour reproduire / Steps to reproduce
+      description: Liste les actions exactes dans l’ordre.
+      placeholder: |
+        1. Ouvrir…
+        2. Appuyer sur…
+        3. Observer…
+    validations:
+      required: true
+  - type: checkboxes
+    id: sensitive
+    attributes:
+      label: Données sensibles / Sensitive data
+      options:
+        - label: Je confirme ne pas avoir inclus de données de paiement, de mot de passe ou d’autre information sensible.
+          required: true
